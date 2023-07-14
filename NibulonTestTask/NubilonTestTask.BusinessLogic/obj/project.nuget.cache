@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "ACbB8+Jz2A1/gX0TvfIs+rzeblV3/2HkDiwylY74aI6uKOkhF8efRkCMW2jAnrJR3C7+kpDOeob5ew7XofWSHw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\oleks\\source\\repos\\NibulonTestTask\\NubilonTestTask.BusinessLogic\\BLL.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\oleks\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\oleks\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\oleks\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

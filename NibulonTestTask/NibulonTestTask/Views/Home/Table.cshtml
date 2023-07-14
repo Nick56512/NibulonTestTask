@@ -1,0 +1,63 @@
+﻿@using BLL.DTO;
+@model NibulonTestTask.Models.ViewModels.TableViewModel
+<h2 class="mt-3 mb-3">@Model.TableName</h2>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Номер запису</th>
+            <th scope="col">Дата обліку</th>
+            <th scope="col">Підрозділ Код</th>
+            <th scope="col">Рік врожаю</th>
+            <th scope="col">Контраагент</th>
+            <th scope="col">Найменування</th>
+            <th scope="col">Унікальний номер договору</th>
+            <th scope="col">ТМЦ Код</th>
+            <th scope="col">Ціна</th>
+            <th scope="col">Кількість нетто</th>
+            <th scope="col">Напрямок</th>
+            <th scope="col">вологість</th>
+            <th scope="col">сміття</th>
+            <th scope="col">зараженість</th>
+            @if (!Model.IsReadOnly)
+            {
+                <th scope="col"></th>
+                <th scope="col"></th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var grain in Model?.Grains)
+        {
+            <tr>
+                <td>@grain.Id</td>
+                <td>@grain.RecordDate.ToString("dd.MM.yyyy")</td>
+                <td>@grain.BranchId</td>
+                <td>@grain.CropYear</td>
+                <td>@grain.CounterpartyId</td>
+                <td>@grain.CounterpartyName</td>
+                <td>@grain.ContactId</td>
+                <td>@grain.Product</td>
+                <td>@grain.Price</td>
+                <td>@grain.Amount</td>
+                <td>@grain.Process</td>
+                <td>@grain.Wetness</td>
+                <td>@grain.Garbage</td>
+                <td>@grain.Infection</td>
+
+                @if (!Model.IsReadOnly)
+                {
+                    <td>
+                        <a href="~/Grain/Update?recordId=@grain.Id" class="btn btn-secondary">Редагувати</a>
+                    </td>
+                    <td>
+                        <form method="post" asp-action="Delete" asp-controller="Grain">
+                        <input type="hidden" name="recordId" value="@grain.Id">
+                        <button type="submit" class="btn btn-danger">Видалити</button>
+                    </form>
+                </td>
+                }
+            </tr>
+        }
+        <tr>@Model.Message</tr>
+    </tbody>
+</table>

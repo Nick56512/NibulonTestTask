@@ -1,0 +1,23 @@
+﻿@model NibulonTestTask.Models.ViewModels.IndexViewModel
+
+<button id="table1-btn" class="btn btn-primary d-inline-block">Таблиця 1</button>
+<button id="table2-btn" class="ms-3 btn btn-primary d-inline-block">Таблиця 2</button>
+<button id="table3-btn" class="ms-3 btn btn-primary d-inline-block">Таблиця 3</button>
+<h3 class="mt-3 mb-3 d-block">Згрупувати дані</h3>
+<select class="form-select w-25 d-inline-block" id="start-date">
+    @for (int i = 0; i < Model.Dates.Length; ++i)
+    {
+        <option value="@i">@Model.Dates[i]</option>
+    }
+</select>
+<h1 class="d-inline-block mt-3">-</h1>
+<select class="form-select w-25 d-inline-block" id="finish-date">
+    @for (int i = 0; i < Model.Dates.Length; ++i)
+    {
+        <option value="@i">@Model.Dates[i]</option>
+    }
+</select>
+<button class="d-inline-block ms-3 btn btn-warning" id="group-btn">Згрупувати</button>
+<div id="tab-container">
+    @await Html.PartialAsync("Table",Model.Table)
+</div>

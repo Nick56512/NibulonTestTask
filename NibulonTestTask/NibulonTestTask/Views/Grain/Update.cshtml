@@ -1,0 +1,13 @@
+﻿@model NibulonTestTask.Models.ViewModels.UpdateGrainViewModel
+<form method="post" asp-action="UpdateGrain" asp-controller="Grain">
+    <input type="hidden" asp-for="@Model.RecordId" />
+    <label asp-for="@Model.Amount"></label>
+    <input type="number" class="form-control" asp-for="@Model.Amount" />
+    <label asp-for="@Model.Wetness"></label>
+    <input type="number" class="form-control" asp-for="@Model.Wetness" />
+    <label asp-for="@Model.Garbage"></label>
+    <input type="number" class="form-control" asp-for="@Model.Garbage" />
+    <label asp-for="@Model.Infection"></label>
+    <input type="text" class="form-control" asp-for="@Model.Infection" />
+    <button type="submit" class="btn btn-success" >Редагувати</button>
+</form>
